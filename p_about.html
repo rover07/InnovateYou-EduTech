@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Edutech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+<style>
+
+
+
+
+  body
+  {
+      margin: 0;
+      padding: 0;
+  }
+  
+  html {
+     -webkit-filter: url('#protanopia');
+     -moz-filter: url('#protanopia');
+     -ms-filter: url('#protanopia');
+     -o-filter: url('#protanopia');
+     filter: url('#protanopia');
+  }
+  
+  
+  .protanopia-filter {
+     -webkit-filter: url('#protanopia');
+     -moz-filter: url('#protanopia');
+     -ms-filter: url('#protanopia');
+     -o-filter: url('#protanopia');
+     filter: url('#protanopia');
+  }
+  
+  /* Define the style for the button in its normal state */
+  button.normal {
+     background-color: #4CAF50; /* Green */
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+     border-radius: 12px;
+     border: none;
+  }
+  
+  /* Define the style for the button when it is clicked */
+  button.clicked {
+     background-color: #f44336; /* Red */
+  }
+  
+  .navbar{
+      display: flex;
+      height: 50px;
+      width: 100vw;
+      position: fixed;
+      top: 0px;
+      background-color: rgb(122, 39, 141);
+      justify-content: space-evenly;
+  }
+  a{
+      margin-top: 14px;
+      color: white;
+      text-decoration: none;
+  }
+  
+  .separation {
+      height: 7px;
+      background-color: rgb(46, 44, 44);
+      position: relative;
+      z-index: 20;
+  }
+  
+  .search{
+      margin-top: 50px;
+      padding-top: 10px;
+     display: flex;
+     justify-content: center;
+     ::placeholder {
+      text-align: center;
+  }
+     
+  }
+  #text{
+     width: 700px;
+     height: 40px;
+     background-color: rgb(230, 224, 236);
+     border-radius: 40px;
+  
+  }
+  #btn{
+      width: 130px;
+      height: 44px;
+      background-color: yellow;
+      color: black;
+      border-color: white;
+      border-radius: 40px;
+  }
+  
+  .placeholder {
+      text-align: center;
+  }
+  .container{
+      height: 70px;
+      width: 100vw;
+      background-color: rgb(17, 141, 155);
+  }
+  
+  .about .row{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap:1.5rem;
+   }
+   
+   .about .row .image{
+      flex: 1 1 40rem;
+   }
+   
+   .about .row .image img{
+      margin: 0;
+      padding: 20px;
+      width: 750px;
+      height: 430px;
+   }
+   
+   .about .row .content{
+      flex: 1 1 40rem;
+      padding: auto;
+   }
+   
+   .about .row .content p{
+      font-size: 1.7rem;
+      line-height: 2;
+      color: var(--light-color);
+      padding: 1rem 0;
+   }
+   
+   .about .row .content h3{
+      font-size: 3rem;
+      color:var(--black);
+      text-transform: capitalize;
+   }
+   
+   .about .box-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      gap:1.5rem;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 3rem;
+   }
+   
+   .about .box-container .box{
+      border-radius: .5rem;
+      background-color: var(--white);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+   }
+   
+   .about .box-container .box i{
+      font-size: 4rem;
+      color: var(--main-color);
+   }
+   
+   .about .box-container .box h3{
+      font-size: 2.5rem;
+      color: var(--black);
+      margin-bottom: .3rem;
+   }
+   
+   .about .box-container .box p{
+      font-size: 1.7rem;
+      color:var(--light-color);
+   }
+   
+  
+   .feedback-form {
+      max-width: 400px;
+      margin: 0 auto;
+  }
+  
+  .feedback-form label {
+      display: block;
+      margin-bottom: 10px;
+  }
+  
+  .feedback-form textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+  }
+  
+  .feedback-form input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  
+  .feedback-form input[type="submit"]:hover {
+      background-color: #0056b3;
+  }
+  
+  .reviews .box-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap:1.5rem;
+      justify-content: center;
+      align-items: flex-start;
+   }
+   
+   .reviews .box-container .box{
+      border-radius: .5rem;
+      background-color: var(--white);
+      padding: 2rem;
+   }
+   
+   .reviews .box-container .box p{
+      line-height: 1.7;
+      font-size: 1.7rem;
+      color: var(--light-color);
+   }
+   
+   .reviews .box-container .box .student{
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+   }
+   
+   .reviews .box-container .box .student img{
+      height: 5rem;
+      width: 5rem;
+      object-fit: cover;
+      border-radius: 50%;
+   }
+   
+   .reviews .box-container .box .student h3{
+      font-size: 2rem;
+      color: var(--black);
+      margin-bottom: .3rem;
+   }
+   
+   .reviews .box-container .box .student .stars{
+      font-size: 1.5rem;
+      color:var(--orange);
+   }
+  
+   
+
+
+</style>
+
+  </head>
+<body>
+
+
+<div class="navbar">
+  <a href="p_home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="p_courses.html"><i class="fa fa-fw fa-envelope"></i> Courses</a>
+  <a href="p_about.html"><i class="bi bi-file-person-fill"></i>About</a>
+  <a href="about.html"><i></i> Change</a>
+</div>
+<div class="container">
+    <div class="search" >
+    <input type="text" id="text" placeholder="Search Courses....." >
+    <button id="btn">Search</button> 
+</div>
+</div> 
+
+  <section class="about">
+
+    <div class="row">
+
+      <div class="image">
+        <img src="images/about-img.svg" alt="">
+      </div>
+
+      <div class="content">
+        <h3>why choose us?</h3>
+        <p>At our edutech website, we're committed to inclusivity. We're dedicated to providing a seamless learning
+          experience for individuals of all abilities, including those with color blindness. Our platform features
+          carefully curated content and user-friendly design elements that cater to both color blind and normal users.
+          Through innovation and accessibility, we're empowering everyone to engage with education on their own terms.
+          Join us in shaping a more inclusive learning environment for all..</p>
+        <a href="courses.html" class="inline-btn">our courses</a>
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+  <section class="reviews">
+
+    <h1 class="heading">student's reviews</h1>
+
+    <div class="box-container">
+
+      
+      <div class="box">
+        <p>Innovative courses, easy-to-follow lectures, and interactive quizzes make learning enjoyable. I highly recommend this platform to anyone looking to expand their knowledge in the tech field.</p>
+        <div class="student">
+          <img src="images/pic-3.jpg" alt="">
+          <div>
+            <h3>john deo</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <p>Edutech platform offers diverse topics, accommodating all interests and skill levels. Accessible materials empower students to study at their own pace, promoting flexibility.</p>
+        <div class="student">
+          <img src="images/pic-4.jpg" alt="">
+          <div>
+            <h3>john deo</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <p>Accessible materials empower students to study at their own pace, promoting flexibility.Regular updates ensure content relevance, keeping students engaged and informed.</p>
+        <div class="student">
+          <img src="images/pic-5.jpg" alt="">
+          <div>
+            <h3>john deo</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <div class="box">
+        <p>Real-world projects provide practical experience, enhancing skill acquisition.Competitive pricing makes quality education affordable and accessible to all.</p>
+        <div class="student">
+          <img src="images/pic-7.jpg" alt="">
+          <div>
+            <h3>john deo</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
